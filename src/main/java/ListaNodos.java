@@ -53,7 +53,12 @@ public class ListaNodos {
         if (index > getLength() || index < 0) return;
 
         Nodo elemento = new Nodo(valor);
-        if (index == 0) agregarAlPrincipio(elemento);
+        if (index == 0) {
+            insertarAlPrincipio(elemento);
+        }
+        else if (index == getLength()) {
+            insertarAlFinal(elemento);
+        }
         else {
 
             Nodo buscar = this.cabeza;
@@ -71,20 +76,19 @@ public class ListaNodos {
         setLength(getLength()+1);
     }
 
-    private void agregarAlPrincipio(Nodo elemento) {
+    private void insertarAlPrincipio(Nodo elemento) {
         Nodo aux = cabeza;
         cabeza = elemento;
         cabeza.setSiguiente(aux);
+        if (getLength() == 0) {
+            cola = cabeza;
+            cabeza.setSiguiente(cola);
+        }
     }
 
-    private void agregarAlFinal(Nodo elemento) {
-
-        Nodo anterior = cabeza;
-        while (anterior.getSiguiente() != null) {
-            anterior = anterior.getSiguiente();
-        }
-
-        anterior.setSiguiente(elemento);
+    private void insertarAlFinal(Nodo elemento) {
+        cola.setSiguiente(elemento);
+        cola = elemento;
     }
 
     public Integer remove(Integer index) {
