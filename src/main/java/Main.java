@@ -10,7 +10,7 @@ public class Main {
         //System.out.println(lista.remove(0));
 
         ListaNodos listaEnlazada = new ListaNodos();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 1000000; i++) {
             lista.add((i-1), i);
             listaEnlazada.add((i-1), i);
         }

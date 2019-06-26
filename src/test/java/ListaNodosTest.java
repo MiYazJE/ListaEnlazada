@@ -18,6 +18,7 @@ public class ListaNodosTest {
 
     @After
     public void after() throws Exception {
+
     }
 
     /**
@@ -108,7 +109,7 @@ public class ListaNodosTest {
     @Test
     public void add() throws Exception {
         ListaNodos lista = new ListaNodos();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000000; i++) {
             lista.add(i, i);
         }
     }
